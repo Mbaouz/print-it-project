@@ -127,15 +127,17 @@ header {
 	position: absolute;
 
 	   }
-#banner .arrow_left {
+ #arrow_left {
 	position: absolute;
 	left: -600px;
-	top: -50px;
+	top: -20px;
+	cursor: pointer;
 }
-#banner .arrow_right {
+ #arrow_right {
 	position: absolute;
 	right: -600px;
-	top: -50px
+	top: -20px;
+	cursor: pointer;
 }
 /* Gestion des points du carrousel */
 .dots {
@@ -143,7 +145,7 @@ header {
 	bottom: 40px;
 	display: flex;
 }
-.dot {
+#dot_1 , #dot_2 , #dot_3 , #dot_4 {
 	margin-inline: 5px;
 	width: 13px;
 	height: 13px;
@@ -152,7 +154,7 @@ header {
 	border-radius: 100%;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
 }
-.dot_selected {
+.dot_selected , #dot_1 {
 	background-color: #fff;
 }
 /* Fin du code CSS pour le carousel */
