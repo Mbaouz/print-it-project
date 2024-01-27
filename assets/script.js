@@ -1,26 +1,67 @@
 const slides = [
-	{
-		"image":"slide1.jpg",
-		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
+	{ //0
+		"image": "./assets/images/slideshow/slide1.jpg",
+		"tagLine": "Impressions tous formats <span>en boutique et en ligne</span>"
 	},
-	{
-		"image":"slide2.jpg",
-		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
+	{ // 1
+		"image": "./assets/images/slideshow/slide2.jpg",
+		"tagLine": "Tirages haute définition grand format <span>pour vos bureaux et events</span>"
 	},
-	{
-		"image":"slide3.jpg",
-		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
+	{ // 2
+		"image": "./assets/images/slideshow/slide3.jpg",
+		"tagLine": "Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	},
-	{
-		"image":"slide4.png",
-		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
+	{ // 3
+		"image": "./assets/images/slideshow/slide4.png",
+		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
 
+const arrow_left = document.getElementById("arrow_left");
+const arrow_right = document.getElementById("arrow_right");
+const img = document.querySelector(".banner-img")
+const paragraph = document.querySelector("#banner p")
+const dots = document.querySelectorAll(".dot")
+let index = 0;
 
-let slide_left= document.getElementById("arrow_left");
+arrow_left.addEventListener("click", function () {
+	console.log("Click sur fleche gauche")
+	dots[index].classList.remove("dot_selected")
+	index--
+	if (index < 0)
+		index = 3;
+	dots[index].classList.add("dot_selected")
+	const newImage = slides[index]
+	img.src = newImage.image
+	paragraph.innerHTML = newImage.tagLine
+	
+	
+		
+	
+	// Verifier que l'index ne passe jamais en dessous de 0
+});
 
-arrow_left.addEventListener("click" , function (slide_left) {dot.idList.add("dot_selected")});
+arrow_right.addEventListener("click", function () {
+	console.log("click sur fleche droite")
+	
 
-let arrow_right = document.getElementById("arrow_right");
-arrow_right.addEventListener("click" , function () {console.log ("click sur fleche droite")});
+	dots[index].classList.remove("dot_selected")
+	index++
+	if (index > 3) 
+	index = 0 ;
+	dots[index].classList.add("dot_selected")
+	const newImage = slides[index]
+	img.src = newImage.image
+	paragraph.innerHTML = newImage.tagLine
+
+	
+	
+
+	
+	
+	
+	
+	
+
+	
+});
