@@ -25,7 +25,7 @@ const dots = document.querySelectorAll(".dot")
 let index = 0;
 
 function calculPosition (){
-	let max = slides.length - 1 ;
+	const max = slides.length - 1 ;
 	if (index < 0)
 	index = max;
     if (index > max)
