@@ -25,17 +25,17 @@ const dots = document.querySelectorAll(".dot")
 let index = 0;
 
 function calculPosition (){
-	
+	let max = slides.length - 1 ;
 	if (index < 0)
-	index = 3 ;
-    if (index > 3)
+	index = max;
+    if (index > max)
 	index = 0 ;
 
 	
 } 
 
 arrow_left.addEventListener("click", function () {
-	console.log("Click sur fleche gauche")
+	console.log(slides.length - 1)
 	dots[index].classList.remove("dot_selected")
 	index--
 	calculPosition()
