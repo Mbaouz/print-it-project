@@ -24,12 +24,21 @@ const paragraph = document.querySelector("#banner p")
 const dots = document.querySelectorAll(".dot")
 let index = 0;
 
+function calculPosition (){
+	
+	if (index < 0)
+	index = 3 ;
+    if (index > 3)
+	index = 0 ;
+
+	
+} 
+
 arrow_left.addEventListener("click", function () {
 	console.log("Click sur fleche gauche")
 	dots[index].classList.remove("dot_selected")
 	index--
-	if (index < 0)
-		index = 3;
+	calculPosition()
 	dots[index].classList.add("dot_selected")
 	const newImage = slides[index]
 	img.src = newImage.image
@@ -43,12 +52,9 @@ arrow_left.addEventListener("click", function () {
 
 arrow_right.addEventListener("click", function () {
 	console.log("click sur fleche droite")
-	
-
 	dots[index].classList.remove("dot_selected")
 	index++
-	if (index > 3) 
-	index = 0 ;
+	calculPosition()
 	dots[index].classList.add("dot_selected")
 	const newImage = slides[index]
 	img.src = newImage.image
